@@ -1,0 +1,41 @@
+html {
+	font-family: arial, helvetica;
+}
+
+input[type=button] {
+	padding: .1em;
+}
+
+table {
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+th {
+	border-top: solid .1em;
+	text-align: left;
+	background-color: #CCCCCC;
+}
+
+tr {
+	border-bottom: solid .1em;
+}
+
+tbody tr:hover {
+	background-color: #FFCC66;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.inputRow {
+	padding: .1em;
+}
+
+.inputRow input[type=text] {
+	width: 15em;
+}
+
+.inputRow label {
+	display: block;
+}

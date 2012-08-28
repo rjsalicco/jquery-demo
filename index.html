@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+	<title>Data Viewer</title>
+	
+	<link type="text/css" href="js/lib/jquery-ui-1.8.22.custom/css/ui-lightness/jquery-ui-1.8.22.custom.css" rel="stylesheet" />
+	<link type="text/css" href="style/main.css" rel="stylesheet" />
+	
+	<script type="text/javascript" src="js/lib/jspdf-20090504/libs/base64.js"></script>
+	<script type="text/javascript" src="js/lib/jspdf-20090504/libs/sprintf.js"></script>
+	<script type="text/javascript" src="js/lib/jspdf-20090504/jspdf.js"></script>
+	
+	<script type="text/javascript" src="js/lib/jquery-ui-1.8.22.custom/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/lib/jquery-ui-1.8.22.custom/js/jquery-ui-1.8.22.custom.min.js"></script>
+	
+	<script type="text/javascript" src="js/lib/highcharts-2.2.5/js/highcharts.js"></script>
+	
+	<script type="text/javascript" src="js/chart.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/personImpl.js"></script>
+	<script type="text/javascript" src="js/policyImpl.js"></script>
+  </head>
+  <body>
+	<div id="errorDialog">
+		<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"> 
+			<p>
+				<span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+				<strong>Error:</strong> <span id="errorMessage"></span>
+			</p>
+		</div>
+	</div>
+	<div id="mainTab">
+		<ul>
+			<li><a href="#mainTab-1">Person</a></li>
+			<li><a href="#mainTab-2">Policy</a></li>
+			<li><a href="#mainTab-3">Chart</a></li>
+		</ul>
+		<div id="mainTab-1">
+			<table id="personList">
+				<thead>
+					<tr><th>Id</th><th>First Name</th><th>Last Name</th><th>Date of Birth</th></tr>
+				</thead>
+				<tbody> </tbody>
+			</table>
+		</div>
+		<div id="mainTab-2">
+			<table id="policyList">
+				<thead>
+					<tr><th>Id</th><th>Policy Number</th><th>Face Value</th><th>Effective Date</th><th>Status</th></tr>
+				</thead>
+				<tbody> </tbody>
+			</table>
+		</div>
+		<div id="mainTab-3">
+			<div id="pieChart"> </div>
+		</div>
+	</div>
+	<div id="personDialog" title="Person">
+		<div id="personAccordion">
+			<h3><a href="#">Details</a></h3>
+			<div>
+				<input type="hidden" id="person_id" />
+				<p class="inputRow">
+					<label for="person_firstName">First Name:</label> 
+					<input type="text" id="person_firstName" />
+				</p>
+				<p class="inputRow">
+					<label for="person_lastName">Last Name:</label>
+					<input type="text" id="person_lastName" />
+				</p>
+				<p class="inputRow">
+					<label for="person_dateOfBirth">Date of Birth:</label>
+					<input type="text" id="person_dateOfBirth" />
+				</p>
+				<p class="inputRow">
+					<label for="person_taxId">Tax Id:</label> 
+					<input type="text" id="person_taxId" disabled />
+				</p>
+			</div>
+			<h3><a href="#">Contact Information</a></h3>
+			<div>
+				<p class="inputRow">
+					<label for="person_emailAddress">Email Address:</label> 
+					<input type="text" id="person_emailAddress" />
+				</p>
+			</div>
+		</div>
+	</div>
+	<div id="policyDialog" title="Policy">
+		<div id="policyAccordion">
+			<h3><a href="#">Details</a></h3>
+			<div>
+				<input type="hidden" id="policy_id" />
+				<p class="inputRow">
+					<label for="policy_policyNumber">Policy Number:</label> 
+					<input type="text" id="policy_policyNumber" disabled />
+				</p>
+				<p class="inputRow">
+					<label for="policy_lineOfBusiness">Line of Business:</label> 
+					<input type="text" id="policy_lineOfBusiness" disabled />
+				</p>
+				<p class="inputRow">
+					<label for="policy_faceValue">Face Value:</label> 
+					<input type="text" id="policy_faceValue" disabled />
+				</p>
+				<p class="inputRow">
+					<label for="policy_cashValue">Cash Value:</label> 
+					<input type="text" id="policy_cashValue" disabled />
+				</p>
+				<p class="inputRow">
+					<label for="policy_effectiveDate">Effective Date:</label> 
+					<input type="text" id="policy_effectiveDate" disabled />
+				</p>
+				<p class="inputRow">
+					<label for="policy_paidToDate">Paid to Date:</label> 
+					<input type="text" id="policy_paidToDate" disabled />
+				</p>
+				<p class="inputRow">
+					<label for="policy_status">Status:</label> 
+					<input type="text" id="policy_status" disabled />
+				</p>
+			</div>
+			<h3><a href="#">Insured</a></h3>
+			<div> </div>
+			<h3><a href="#">Beneficiary</a></h3>
+			<div> </div>
+			<h3><a href="#">History</a></h3>
+			<div> </div>
+		</div>
+	</div>
+  </body>
+</html>
