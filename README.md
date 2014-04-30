@@ -1,0 +1,3 @@
+jquery-demo
+===
+JQuery-demo is jQuery and jQuery-ui Web application. More details to come...

@@ -72,6 +72,13 @@ function displayPolicy(policy) {
 	$("#policy_effectiveDate").val(policy.effectiveDate);
 	$("#policy_paidToDate").val(policy.paidToDate);
 	$("#policy_status").val(policy.status);
+
+	// checking for insured
+	if(policy.insured) {
+		$("#policy_insured_firstName").val(policy.insured.person.firstName);
+		$("#policy_insured_lastName").val(policy.insured.person.lastName);
+		$("#policy_insured_taxId").val(policy.insured.person.taxId);	
+	}
 	openDialog("#policyDialog", "Viewing Policy: " + policy.policyNumber);
 }
 

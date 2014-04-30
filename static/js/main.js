@@ -1,3 +1,7 @@
+// Begin Global Variables
+var hostName = "localhost";
+// End Global Variables
+
 function clearContainer(container) {
 	($(container)).empty();
 }
@@ -40,8 +44,8 @@ function openErrorDialog(container, messageContainer, message) {
 
 $(document).ready(function(){
 	$.dataViewer = {
-		hostName: "localhost:8000",
-		contextPath: "/"
+		hostName: hostName,
+		contextPath: ""
 	}
 	
 	$("#mainTab").tabs();

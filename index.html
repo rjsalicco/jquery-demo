@@ -3,24 +3,31 @@
   <head>
     <meta charset="utf-8">
     
-	<title>Data Viewer</title>
+	<title>site-sample</title>
 	
-	<link type="text/css" href="js/lib/jquery-ui-1.8.22.custom/css/ui-lightness/jquery-ui-1.8.22.custom.css" rel="stylesheet" />
-	<link type="text/css" href="style/main.css" rel="stylesheet" />
+	<!-- jQuery CSS -->
+	<link type="text/css" href="static/js/jquery-ui-1.8.22.custom/css/ui-lightness/jquery-ui-1.8.22.custom.css" rel="stylesheet" />
+
+	<!-- Custom CSS -->
+	<link type="text/css" href="static/css/main.css" rel="stylesheet" />
 	
-	<script type="text/javascript" src="js/lib/jspdf-20090504/libs/base64.js"></script>
-	<script type="text/javascript" src="js/lib/jspdf-20090504/libs/sprintf.js"></script>
-	<script type="text/javascript" src="js/lib/jspdf-20090504/jspdf.js"></script>
+	<!-- JavaScript PDF -->
+	<script type="text/javascript" src="static/js/jspdf-20090504/libs/base64.js"></script>
+	<script type="text/javascript" src="static/js/jspdf-20090504/libs/sprintf.js"></script>
+	<script type="text/javascript" src="static/js/jspdf-20090504/jspdf.js"></script>
 	
-	<script type="text/javascript" src="js/lib/jquery-ui-1.8.22.custom/js/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="js/lib/jquery-ui-1.8.22.custom/js/jquery-ui-1.8.22.custom.min.js"></script>
+	<!-- jQuery -->
+	<script type="text/javascript" src="static/js/jquery-ui-1.8.22.custom/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="static/js/jquery-ui-1.8.22.custom/js/jquery-ui-1.8.22.custom.min.js"></script>
 	
-	<script type="text/javascript" src="js/lib/highcharts-2.2.5/js/highcharts.js"></script>
+	<!-- Highcharts -->
+	<script type="text/javascript" src="static/js/highcharts-2.2.5/js/highcharts.js"></script>
 	
-	<script type="text/javascript" src="js/chart.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="js/personImpl.js"></script>
-	<script type="text/javascript" src="js/policyImpl.js"></script>
+	<!-- Custom JavaScript -->
+	<script type="text/javascript" src="static/js/chart.js"></script>
+	<script type="text/javascript" src="static/js/main.js"></script>
+	<script type="text/javascript" src="static/js/personImpl.js"></script>
+	<script type="text/javascript" src="static/js/policyImpl.js"></script>
   </head>
   <body>
 	<div id="errorDialog">
@@ -35,7 +42,7 @@
 		<ul>
 			<li><a href="#mainTab-1">Person</a></li>
 			<li><a href="#mainTab-2">Policy</a></li>
-			<li><a href="#mainTab-3">Chart</a></li>
+			<li><a href="#mainTab-3">Reports</a></li>
 		</ul>
 		<div id="mainTab-1">
 			<table id="personList">
@@ -54,7 +61,10 @@
 			</table>
 		</div>
 		<div id="mainTab-3">
-			<div id="pieChart"> </div>
+			<div class="chartRow">
+				<div id="personPolicyBreakdownPieChart" class="chart"></div>
+				<div id="policyStatusBreakdownPieChart" class="chart"></div>
+			</div>
 		</div>
 	</div>
 	<div id="personDialog" title="Person">
@@ -123,7 +133,20 @@
 				</p>
 			</div>
 			<h3><a href="#">Insured</a></h3>
-			<div> </div>
+			<div> 
+				<p class="inputRow">
+					<label for="policy_insured_firstName">First Name:</label> 
+					<input type="text" id="policy_insured_firstName" disabled />
+				</p>
+				<p class="inputRow">
+					<label for="policy_insured_lastName">Last Name:</label>
+					<input type="text" id="policy_insured_lastName" disabled />
+				</p>
+				<p class="inputRow">
+					<label for="policy_insured_taxId">Tax Id:</label> 
+					<input type="text" id="policy_insured_taxId" disabled />
+				</p>
+			</div>
 			<h3><a href="#">Beneficiary</a></h3>
 			<div> </div>
 			<h3><a href="#">History</a></h3>

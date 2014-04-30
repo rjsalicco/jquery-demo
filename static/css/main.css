@@ -28,6 +28,10 @@ tbody tr:hover {
 	cursor: hand;
 }
 
+.chart {
+	margin: 1em;
+}
+
 .inputRow {
 	padding: .1em;
 }

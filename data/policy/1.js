@@ -7,6 +7,13 @@
         "status": "Active",
 		"lineOfBusiness": "Life",
 		"paidToDate": "Yes",
-		"cashValue": "1000.00"
+		"cashValue": "1000.00",
+		"insured": {
+			"person": {
+				"firstName": "Joe",
+				"lastName": "Sample",
+				"taxId": "***-**-5591"
+			}
+		}
 	}
 }
