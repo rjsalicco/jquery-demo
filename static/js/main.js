@@ -48,7 +48,7 @@ $(document).ready(function(){
 		contextPath: ""
 	}
 	
-	$("#mainTab").tabs();
+	$("#mainTabs").tabs();
 	
 	$("#errorDialog").dialog({
 		autoOpen: false,

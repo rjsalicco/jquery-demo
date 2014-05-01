@@ -85,7 +85,8 @@ function drawPieChart(data, containerId, chartTitle) {
             renderTo: containerId,
             plotBackgroundColor: null,
             plotBorderWidth: null,
-            plotShadow: false
+            plotShadow: false,
+            className: 'chart'
         },
         title: {
             text: chartTitle

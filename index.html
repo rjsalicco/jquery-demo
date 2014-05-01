@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     
-	<title>jQuery-demo</title>
+	<title>jquery-demo</title>
 	
 	<!-- jQuery CSS -->
 	<link type="text/css" href="static/js/jquery-ui-1.8.22.custom/css/ui-lightness/jquery-ui-1.8.22.custom.css" rel="stylesheet" />
@@ -23,50 +23,69 @@
 	<!-- Highcharts -->
 	<script type="text/javascript" src="static/js/highcharts-2.2.5/js/highcharts.js"></script>
 	
-	<!-- Custom JavaScript -->
+	<!-- Application Specific JavaScript -->
 	<script type="text/javascript" src="static/js/chart.js"></script>
 	<script type="text/javascript" src="static/js/main.js"></script>
 	<script type="text/javascript" src="static/js/personImpl.js"></script>
 	<script type="text/javascript" src="static/js/policyImpl.js"></script>
   </head>
   <body>
+
+  	<!-- Begin Main Container -->
+  	<div id="mainContainer">
+  		<h1>jquery-demo</h1>
+
+  		<!-- Begin Main Tabs -->
+		<div id="mainTabs">
+			<ul>
+				<li><a href="#mainTabs-1">Person</a></li>
+				<li><a href="#mainTabs-2">Policy</a></li>
+				<li><a href="#mainTabs-3">Charts</a></li>
+			</ul>
+			<div id="mainTabs-1">
+				<h3>Person List</h3>
+				<table id="personList">
+					<thead>
+						<tr><th>Id</th><th>First Name</th><th>Last Name</th><th>Date of Birth</th></tr>
+					</thead>
+					<tbody> </tbody>
+				</table>
+			</div>
+			<div id="mainTabs-2">
+				<h3>Policy List</h3>
+				<table id="policyList">
+					<thead>
+						<tr><th>Id</th><th>Policy Number</th><th>Face Value</th><th>Effective Date</th><th>Status</th></tr>
+					</thead>
+					<tbody> </tbody>
+				</table>
+			</div>
+			<div id="mainTabs-3">
+				<h3>Data Breakdown</h3>
+				<div id="charts">
+					<div id="personPolicyBreakdownPieChart"></div>
+					<div id="policyStatusBreakdownPieChart"></div>
+				</div>
+			</div>
+		</div>
+		<!-- End Main Tabs -->
+
+	</div>
+	<!-- End Main Container -->
+
+	<!-- Begin Error Dialog -->
 	<div id="errorDialog">
 		<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"> 
 			<p>
 				<span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
-				<strong>Error:</strong> <span id="errorMessage"></span>
+				<strong>Error:</strong> 
+				<span id="errorMessage"></span>
 			</p>
 		</div>
 	</div>
-	<div id="mainTab">
-		<ul>
-			<li><a href="#mainTab-1">Person</a></li>
-			<li><a href="#mainTab-2">Policy</a></li>
-			<li><a href="#mainTab-3">Reports</a></li>
-		</ul>
-		<div id="mainTab-1">
-			<table id="personList">
-				<thead>
-					<tr><th>Id</th><th>First Name</th><th>Last Name</th><th>Date of Birth</th></tr>
-				</thead>
-				<tbody> </tbody>
-			</table>
-		</div>
-		<div id="mainTab-2">
-			<table id="policyList">
-				<thead>
-					<tr><th>Id</th><th>Policy Number</th><th>Face Value</th><th>Effective Date</th><th>Status</th></tr>
-				</thead>
-				<tbody> </tbody>
-			</table>
-		</div>
-		<div id="mainTab-3">
-			<div class="chartRow">
-				<div id="personPolicyBreakdownPieChart" class="chart"></div>
-				<div id="policyStatusBreakdownPieChart" class="chart"></div>
-			</div>
-		</div>
-	</div>
+	<!-- End Error Dialog -->
+
+	<!-- Begin Person Dialog -->
 	<div id="personDialog" title="Person">
 		<div id="personAccordion">
 			<h3><a href="#">Details</a></h3>
@@ -98,6 +117,9 @@
 			</div>
 		</div>
 	</div>
+	<!-- End Person Dialog -->
+
+	<!-- Begin Policy Dialog -->
 	<div id="policyDialog" title="Policy">
 		<div id="policyAccordion">
 			<h3><a href="#">Details</a></h3>
@@ -153,5 +175,7 @@
 			<div> </div>
 		</div>
 	</div>
+	<!-- End Policy Dialog -->
+
   </body>
 </html>
