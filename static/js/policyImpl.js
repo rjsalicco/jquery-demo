@@ -30,6 +30,10 @@ function _policyImpl() {
 	getPolicies();
 }
 
+function clearPolicyInputFieldData() {
+	$("input[id^='policy_']").val("");
+}
+
 function createPolicyDocument(policy) {
 	var doc = new jsPDF();
 	
@@ -64,6 +68,10 @@ function createPolicyRow(policy) {
 }
 
 function displayPolicy(policy) {
+	// reset values before binding data
+	clearPolicyInputFieldData();
+
+	// bind data values
 	$("#policy_id").val(policy.id);
 	$("#policy_policyNumber").val(policy.policyNumber);
 	$("#policy_lineOfBusiness").val(policy.lineOfBusiness);

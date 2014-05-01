@@ -24,6 +24,10 @@ function _personImpl() {
 	getPersons();
 }
 
+function clearPersonInputFieldData() {
+	$("input[id^='person_'").val("");
+}
+
 function createPersonRow(person) {
 	return "<tr id=\""+ person.id + "\"><td>" 
 		+ person.id + "</td><td>" 
@@ -33,6 +37,10 @@ function createPersonRow(person) {
 }
 
 function displayPerson(person) {
+	// reset values before binding data
+	clearPersonInputFieldData();
+
+	// bind data values
 	$("#person_id").val(person.id);
 	$("#person_firstName").val(person.firstName);
 	$("#person_lastName").val(person.lastName);
