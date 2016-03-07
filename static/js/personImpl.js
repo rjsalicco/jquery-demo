@@ -53,7 +53,7 @@ function displayPerson(person) {
 function getPersons() {
 	clearContainer("#personList > tbody");
 	
-	$.getJSON(getURLBase() + '\/data\/person\/list.js', function(json) {
+	$.getJSON(getURLBase() + '\/data\/person\/list.json', function(json) {
 		
 		drawResults(json.persons, "#personList > tbody:last", function(arg) {
 			return createPersonRow(arg.person);
@@ -68,7 +68,7 @@ function getPersons() {
 }
 
 function getPerson(id, callback) {
-	return $.getJSON(getURLBase() + '\/data\/person\/'+ id + '.js', function(json) {
+	return $.getJSON(getURLBase() + '\/data\/person\/'+ id + '.json', function(json) {
 		callback(json.person);
 	}).error(function() {
 		openErrorDialog("#errorDialog", "#errorMessage", "Could not find person!");

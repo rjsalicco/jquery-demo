@@ -92,7 +92,7 @@ function displayPolicy(policy) {
 
 function getPolicies() {
 	clearContainer("#policyList > tbody");
-	$.getJSON(getURLBase() + '\/data\/policy\/list.js', function(json) {
+	$.getJSON(getURLBase() + '\/data\/policy\/list.json', function(json) {
 		
 		drawResults(json.policies, "#policyList > tbody:last", function(arg) {
 			return createPolicyRow(arg.policy);
@@ -107,7 +107,7 @@ function getPolicies() {
 }
 
 function getPolicy(id, callback) {
-	$.getJSON(getURLBase() + '\/data\/policy\/'+ id + '.js', function(json) {
+	$.getJSON(getURLBase() + '\/data\/policy\/'+ id + '.json', function(json) {
 		callback(json.policy);
 	}).error(function() {
 		openErrorDialog("#errorDialog", "#errorMessage", "Could not find policy!");
