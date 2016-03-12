@@ -26,10 +26,6 @@ function enableClickable(container, getAction) {
 	});
 }
 
-function getURLBase() {
-	return 'http:\/\/' + ($.dataViewer.hostName) + '\/' + ($.dataViewer.contextPath);
-}
-
 function openDialog(container, title) {
 	($(container)).dialog('open');
 	($(container)).dialog( "option", "title", title);

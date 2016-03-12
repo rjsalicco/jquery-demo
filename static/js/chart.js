@@ -15,7 +15,7 @@ function getPersonTotal() {
 	var personTotal = 0;
 	
 	$.ajaxSetup( { "async": false } );
-	$.getJSON(getURLBase() + '\/data\/person\/list.js', function(json) {
+	$.getJSON('\/data\/person\/list.json', function(json) {
 		personTotal = json.persons.length;
 	});
 	
@@ -26,7 +26,7 @@ function getPolicyTotal() {
 	var policyTotal = 0;
 	
 	$.ajaxSetup( { "async": false } );
-	$.getJSON(getURLBase() + '\/data\/policy\/list.js', {async: false}, function(json) {
+	$.getJSON('\/data\/policy\/list.json', {async: false}, function(json) {
 		policyTotal = json.policies.length;
 	});
 	
@@ -57,7 +57,7 @@ function getPolicyStatusBreakdownData() {
 	var policyStatusBreakdownDataMap = {};
 
 	$.ajaxSetup( { "async": false } );
-	$.getJSON(getURLBase() + '\/data\/policy\/list.js', {async: false}, function(json) {
+	$.getJSON('\/data\/policy\/list.json', {async: false}, function(json) {
 		for (var i = json.policies.length-1; i >= 0; i--) {
 			var iterator = json.policies[i];
 			var status = iterator.policy.status;
