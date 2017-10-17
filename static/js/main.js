@@ -56,10 +56,13 @@ $(document).ready(function(){
 			}
 		}
 	});
-	
+
+	/*global _chart*/
 	// initialize chart
 	_chart();
 	
+	/*global _personImpl*/
+	/*global _policyImpl*/
 	// initialize domain components
 	_personImpl();
 	_policyImpl();
