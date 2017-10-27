@@ -1,5 +1,12 @@
 // Begin Global Variables
+
 var hostName = "localhost";
+
+/*global $*/
+/*global _chart*/
+/*global _personImpl*/
+/*global _policyImpl*/
+
 // End Global Variables
 
 function clearContainer(container) {
@@ -57,12 +64,9 @@ $(document).ready(function(){
 		}
 	});
 
-	/*global _chart*/
 	// initialize chart
 	_chart();
 	
-	/*global _personImpl*/
-	/*global _policyImpl*/
 	// initialize domain components
 	_personImpl();
 	_policyImpl();
